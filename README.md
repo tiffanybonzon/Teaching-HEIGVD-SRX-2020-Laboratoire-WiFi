@@ -46,7 +46,7 @@ Nous savons que la cible s’est hébergée à l’hôtel « Black Rain » et qu
 >
 > **_Réponse :_** 
 >
-> - Les trames de type Prove Request sont affichables avec le filtre `wlan.fc.type_subtype == 4`
+> - Les trames de type Probe Request sont affichables avec le filtre `wlan.fc.type_subtype == 4`
 
 ---
 > **_Question :_** Quel est l’adresse MAC de la cible ?
