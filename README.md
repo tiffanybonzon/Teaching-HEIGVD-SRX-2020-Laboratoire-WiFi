@@ -1,10 +1,12 @@
 # Teaching-HEIGVD-SRX-2020-Laboratoire-WiFi
 
+**Auteure** : Tiffany Bonzon
+
 Vous aurez besoin de ``Wireshark`` et du logiciel ``aircrack-ng`` pour ce laboratoire. 
 
 Si vous utilisez une distribution Kali, tout est déjà pré-installé. Pour la version Windows du logiciel ``aircrack-ng``ou pour son installation sur d'autres distributions, référez-vous au
 [site web aircrack-ng](https://aircrack-ng.org) et/ou au gestionnaire de paquets de votre distribution.
- 
+
 # Identification d'un dispositif
 
 ## Introduction
@@ -41,23 +43,37 @@ Nous savons que la cible s’est hébergée à l’hôtel « Black Rain » et qu
 * Répondre aux questions suivantes :
 
 > **_Question :_** Quel filtre avez-vous utilisé
-> 
+>
 > **_Réponse :_** 
+>
+> - Rechercher le SSID de BlackRain
+>
+>   ![](./images/findSSID.png)
+>
+> - Puis, appliquer un filtre pour n'avoir que les Probe Requests avec le SSID trouvé plus haut `wlan.fc.type_subtype == 4 && wlan.ssid == "BlackRainHotel Free Wifi"`
 
 ---
 > **_Question :_** Quel est l’adresse MAC de la cible ?
-> 
-> **_Réponse :_** 
+>
+> **_Réponse :_** fc:f1:36:22:49:74
+>
+> ![](./images/MACVictime.png)
 
 ---
 > **_Question :_** Quel est le nom du constructeur de l’interface sans fils de la cible ?
 > 
-> **_Réponse :_** 
+> **_Réponse :_** Samsung
 
 ---
 > **_Question :_** Quel autres endroits la cible a-t-elle probablement visités ?
-> 
-> **_Réponse :_** 
+>
+> **_Réponse :_** En changeant le filtre pour nous afficher uniquement les Probe Requests de notre victime `wlan.fc.type_subtype == 4 && wlan.addr == fc:f1:36:22:49:74`
+>
+> On obtient 
+>
+> ![](./images/VisitesVictime.png)
+>
+> - MIGROS Free WiFi, GVA Airport WiFi, BlackRainHotel Free Wifi, Fleur de Pains, et Starbucks
 
 ---
 
@@ -151,7 +167,7 @@ Nous allons nous servir de l’outil aircrack-ng et d’un dictionnaire pour ret
 
 * Copier [le dictionnaire](files/french_dico.txt) sur votre machine locale 
 * Utilisez aircrack-ng en ligne de commandes pour cracker la passphrase du réseau WPA avec le même [fichier de capture chiffrée avec WPA](files/coursWLAN-WPA.cap) que vous avez déjà copié.
- 
+
 ```
 aircrack-ng <nom-du-fichier-capture> -w <nom-du-dictionnaire>
 ```
