@@ -165,8 +165,14 @@ Nous utiliserons Wireshark pour trouver l’authentification WPA contenue dans l
 * Analyser les messages du 4-way handshake. En particulier, essayer de trouver les chiffres aléatoires (Nonces) échangés entre le client et l’AP.
 
 > **_Fournir une capture d'écran des chiffres aléatoires_**
-> 
-> **_Capture ici_** 
+>
+> - Authenticator nonce
+>
+>   ![](./images/WPANonce1.png)
+>
+> - Supplicant nonce
+>
+> ![](./images/WPANonce2.png)
 
 ---
 
@@ -188,22 +194,21 @@ aircrack-ng <nom-du-fichier-capture> -w <nom-du-dictionnaire>
 
 > **_Question :_** Combien de temps avez-vous attendu pour obtenir la passphrase WPA ?
 > 
-> **_Réponse :_** 
+> **_Réponse :_** Entre 9 et 10 secondes après la séléction du bon réseau (Hotspot car c'est le seul qui utilise WPA et dont on a le handshake)
 
 ---
 > **_Montrer une capture d'écran de l'obtention de la passphrase WPA_**
 > 
-> **_Capture ici_** 
+> ![](./images/WPAKey.png)
 
 ---
 > **_Question :_** Lors de la capture, la cible a fait un « ping » sur un serveur. Arrivez-vous à dire de quel serveur il s’agit ?
-
-> 
-> **_Réponse :_** 
-> 
-> Adresse IP du serveur : ?
 >
-> Nom de Domaine : ?
+> **_Réponse :_** 
+>
+> Adresse IP du serveur : 31.13.64.35
+>
+> Nom de Domaine : facebook.com
 
 
 
@@ -214,12 +219,12 @@ Nous avons enlevé une seule trame (choisie stratégiquement) du fichier de capt
 * Répondre aux questions suivantes :
 
 > **_Question :_** Est-ce que vous arrivez à refaire l'exercice ? Pourquoi ou pourquoi pas ?
-> 
-> **_Réponse :_** 
+>
+> **_Réponse :_** Non, car `aircrack` ne détecte pas de réseaux
+>
+> ![](./images/AircrackFail.png)
 
 ---
-> **_Question :_** Sur la base de votre réponse précédente, arrivez-vous à déduire quelle trame a été effacée ?
-
-> 
-> **_Réponse :_** 
-> 
+> **_Question :_** Sur la base de votre réponse précédente, arrivez-vous à déduire quelle trame a été effacée ?**_Réponse :_** (FROM: https://www.ins1gn1a.com/understanding-wpa-psk-cracking/ et les slides de cours sur la construction du PTK) La trame manquante pourrait être la 2ème. Ceci est vérifiable en ouvrant le fichier de capture sur Wireshark et utiliser le filtre `eapol`
+>
+> ![](./images/WPAMissing.png)
