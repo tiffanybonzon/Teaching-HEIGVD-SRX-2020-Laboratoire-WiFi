@@ -225,6 +225,7 @@ Nous avons enlevé une seule trame (choisie stratégiquement) du fichier de capt
 > ![](./images/AircrackFail.png)
 
 ---
-> **_Question :_** Sur la base de votre réponse précédente, arrivez-vous à déduire quelle trame a été effacée ?**_Réponse :_** (FROM: https://www.ins1gn1a.com/understanding-wpa-psk-cracking/ et les slides de cours sur la construction du PTK) La trame manquante pourrait être la 2ème. Ceci est vérifiable en ouvrant le fichier de capture sur Wireshark et utiliser le filtre `eapol`
+> **_Question :_** Sur la base de votre réponse précédente, arrivez-vous à déduire quelle trame a été effacée ?
+> **_Réponse :_** (FROM: https://www.ins1gn1a.com/understanding-wpa-psk-cracking/ et les slides de cours sur la construction du PTK) La trame manquante pourrait être la 2ème. Ceci est vérifiable en ouvrant le fichier de capture sur Wireshark et utiliser le filtre `eapol`
 >
 > ![](./images/WPAMissing.png)
