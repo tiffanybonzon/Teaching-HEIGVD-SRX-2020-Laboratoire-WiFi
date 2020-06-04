@@ -46,30 +46,38 @@ Nous savons que la cible s’est hébergée à l’hôtel « Black Rain » et qu
 >
 > **_Réponse :_** 
 >
+> - Les trames de type Prove Request sont affichables avec le filtre `wlan.fc.type_subtype == 4`
+
+---
+> **_Question :_** Quel est l’adresse MAC de la cible ?
+>
+> **_Réponse :_** 
+>
 > - Rechercher le SSID de BlackRain
 >
 >   ![](./images/findSSID.png)
 >
 > - Puis, appliquer un filtre pour n'avoir que les Probe Requests avec le SSID trouvé plus haut `wlan.fc.type_subtype == 4 && wlan.ssid == "BlackRainHotel Free Wifi"`
-
----
-> **_Question :_** Quel est l’adresse MAC de la cible ?
->
-> **_Réponse :_** fc:f1:36:22:49:74
 >
 > ![](./images/MACVictime.png)
+>
+> - L'adresse MAC de la cible est donc **fc:f1:36:22:49:74**
 
 ---
 > **_Question :_** Quel est le nom du constructeur de l’interface sans fils de la cible ?
-> 
-> **_Réponse :_** Samsung
+>
+> **_Réponse :_** 
+>
+> - Samsung
 
 ---
 > **_Question :_** Quel autres endroits la cible a-t-elle probablement visités ?
 >
-> **_Réponse :_** En changeant le filtre pour nous afficher uniquement les Probe Requests de notre victime `wlan.fc.type_subtype == 4 && wlan.addr == fc:f1:36:22:49:74`
+> **_Réponse :_** 
 >
-> On obtient 
+> - En changeant le filtre pour nous afficher uniquement les Probe Requests de notre victime `wlan.fc.type_subtype == 4 && wlan.addr == fc:f1:36:22:49:74`
+>
+> - On obtient 
 >
 > ![](./images/VisitesVictime.png)
 >
