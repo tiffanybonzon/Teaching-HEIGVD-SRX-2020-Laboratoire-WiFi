@@ -127,17 +127,19 @@ Maintenant que vous avez la clé WEP, configurez la dans Wireshark afin de déch
 
 > **_Question :_** Combien de temps avez-vous attendu pour obtenir la clé WEP ?
 > 
-> **_Réponse :_** 
+> **_Réponse :_** Une seconde grand max
 
 ---
 > **_Montrer une capture d'écran de l'obtention de la clé WEP_**
 > 
-> **_Capture ici_** 
+> ![](./images/WEPKey.png)
 
 ---
 > **_Question :_** Arrivez-vous à récupérer les informations d’identification (credentials) de l’authentification basique http contenue dans la capture ?
-> 
-> **_Réponse :_** 
+>
+> **_Réponse :_** Oui, c'est en base64. Wireshark peut le décoder directement, et on voit que les informations de login sont `admin:admin`
+>
+> ![](./images/WEPBasicAuth.png)
 
 ---
 
